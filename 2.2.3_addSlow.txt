@@ -1,0 +1,17 @@
+// Required: increment, decrement, goLeft, goRight, goToEnd
+
+void addSlow()
+{
+    while (frontIsClear()) {
+        decrement();
+        turnAround();
+        goToEnd();
+        goRight();
+        turnRight();
+        increment();
+        turnAround();
+        goToEnd();
+        goLeft();
+        turnLeft();
+    }
+}

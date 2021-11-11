@@ -1,0 +1,24 @@
+// Required: goToEnd
+
+void cleanTheTunnels()
+{
+    while (onBeeper()) {
+        cleanOneTunnel();
+        if (frontIsClear()) {
+            moveForward();
+        }
+    }
+}
+
+void cleanOneTunnel()
+{
+    turnLeft();
+    pickBeeper();
+    while (beeperAhead()) {
+        moveForward();
+        pickBeeper();
+    }
+    turnAround();
+    goToEnd();
+    turnLeft();
+}

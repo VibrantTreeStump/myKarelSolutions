@@ -1,0 +1,22 @@
+// Required: goToEnd
+
+void hangTheLampions()
+{
+    while (onBeeper()) {
+        hangOneLampion();
+        if (frontIsClear()) {
+            moveForward();
+        }
+    }
+}
+
+void hangOneLampion()
+{
+    turnLeft();
+    pickBeeper();
+    goToEnd();
+    dropBeeper();
+    turnAround();
+    goToEnd();
+    turnLeft();
+}

@@ -1,0 +1,16 @@
+// Required: goLeft, goRight
+
+void walkTheLabyrinth()
+{
+    repeat(99) {
+        if (frontIsClear()) {
+            moveForward();
+        }
+        else if (leftIsClear()) {
+            goLeft();
+        }
+        else {
+            goRight();
+        }
+    }
+}
