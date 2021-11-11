@@ -1,0 +1,24 @@
+// Required: goLeft
+
+void layAndRemoveTiles()
+{
+    if (onBeeper()) {
+        turnAround();
+    }
+    else {
+        dropBeeper();
+        if (frontIsClear() && !beeperAhead()) {
+            moveForward();
+            layAndRemoveTiles();
+            moveForward();
+            pickBeeper();
+        }
+        else {
+            goLeft();
+            layAndRemoveTiles();
+            moveForward();
+            pickBeeper();
+            turnRight();
+        }
+    }
+}

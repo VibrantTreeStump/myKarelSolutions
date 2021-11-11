@@ -1,0 +1,39 @@
+// Required: goToEnd
+
+void secureTheCave()
+{
+    while (frontIsClear()) {
+        secureOneLine();
+        turnRight();
+        if (frontIsClear()) {
+            moveForward();
+        }
+        if (!frontIsClear()) {
+            secureOneLine();
+            turnRight();
+        }
+    }
+}
+
+void secureOneLine()
+{
+    turnLeft();
+    goToEnd();
+    turnAround();
+    transformStalactite();
+}
+
+void transformStalactite()
+{
+    pickBeeper();
+    moveForward();
+    if (onBeeper()) {
+        transformStalactite();
+    }
+    else {
+        goToEnd();
+        turnAround();
+    }
+    dropBeeper();
+    moveForward();
+}

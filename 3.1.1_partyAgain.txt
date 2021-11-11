@@ -1,0 +1,25 @@
+void partyAgain() {
+    while (onBeeper()) {
+        turnLeft();
+        if (frontIsClear()) {
+            pickBeeper();
+            hangOneLampion();
+            turnLeft();
+        }
+        if (beeperAhead()) {
+            moveForward();
+        }
+    }
+}
+
+void hangOneLampion() {
+    moveForward();
+    if (frontIsClear()) {
+        hangOneLampion();
+    }
+    else {
+        dropBeeper();
+        turnAround();
+    }
+    moveForward();
+}
