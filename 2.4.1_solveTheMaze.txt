@@ -1,0 +1,16 @@
+// Required: goLeft
+
+void solveTheMaze()
+{
+    while (!onBeeper()) {
+        if (leftIsClear()) {
+            goLeft();
+        }
+        else if (frontIsClear()) {
+            moveForward();
+        }
+        else {
+            turnRight();
+        }
+    }
+}

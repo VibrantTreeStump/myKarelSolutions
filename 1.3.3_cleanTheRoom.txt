@@ -1,0 +1,30 @@
+// Required: goLeft, goRight
+
+void cleanTheRoom()
+{
+    repeat(5) {
+        cleanOneLane();
+        if (leftIsClear()) {
+            goLeft();
+            turnLeft();
+        }
+        cleanOneLane();
+        if (rightIsClear()) {
+            goRight();
+            turnRight();
+        }
+    }
+}
+
+void cleanOneLane()
+{
+    repeat(9) {
+        if (onBeeper()) {
+            pickBeeper();
+        }
+        moveForward();
+    }
+    if (onBeeper()) {
+        pickBeeper();
+    }
+}

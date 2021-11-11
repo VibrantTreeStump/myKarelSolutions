@@ -1,0 +1,22 @@
+// Required: goLeft, goRight
+
+void saveTheFlower()
+{
+    moveForward();
+    pickBeeper();
+    repeat(4) {
+        goLeft();
+        moveForward();
+        goRight();
+    }
+    dropBeeper();
+    moveForward();
+    repeat(3) {
+        goRight();
+        moveForward();
+        goLeft();
+    }
+    goRight();
+    moveForward();
+    turnLeft();
+}

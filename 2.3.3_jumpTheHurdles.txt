@@ -1,0 +1,25 @@
+// Required: goRight, goToEnd
+
+void jumpTheHurdles()
+{
+    while (!onBeeper()) {
+        if (!frontIsClear()) {
+            jumpOneHurdle();
+        }
+        else {
+            moveForward();
+        }
+    }
+}
+
+void jumpOneHurdle()
+{
+    turnLeft();
+    while (!rightIsClear()) {
+        moveForward();
+    }
+    goRight();
+    turnRight();
+    goToEnd();
+    turnLeft();
+}

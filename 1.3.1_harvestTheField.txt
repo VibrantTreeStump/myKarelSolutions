@@ -1,0 +1,67 @@
+/*
+
+If you're struggling with this task, read this first:
+
+I found it helpful to first write down every single step Karel should
+take and then find his patterns in my notes, instead of while watching him.
+
+I wrote 'mf' for 'move forward', 'tl' for 'turn left', 'tr' for 'turn right',
+'pu' for 'pick up' and 'ta' for 'turn around'.
+
+With that notation the first five steps look like this: mf, pu, tr, mf, tl
+
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+void harvestTheField()
+{
+    harvestOneDiagonal();
+    changeDiagonal();
+    harvestOneDiagonal();
+    turnAround();
+    harvestOneDiagonal();
+    changeDiagonal();
+    harvestOneDiagonal();
+}
+
+void harvestOneDiagonal()
+{
+    repeat(4) {
+        moveForward();
+        pickBeeper();
+        turnRight();
+        moveForward();
+        turnLeft();
+    }
+}
+
+void changeDiagonal()
+{
+    repeat(2) {
+        moveForward();
+        moveForward();
+        turnLeft();
+    }
+}

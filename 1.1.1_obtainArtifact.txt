@@ -1,0 +1,19 @@
+// Required: goLeft, goRight
+
+void obtainArtifact()
+{
+    goRight();
+    goLeft();
+    repeat(2) {
+        moveForward();
+    }
+    goLeft();
+    pickBeeper();
+    moveForward();
+    goLeft();
+    repeat(2) {
+        moveForward();
+    }
+    goLeft();
+    dropBeeper();
+}

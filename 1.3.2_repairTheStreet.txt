@@ -1,0 +1,25 @@
+// Required: goRight
+
+void repairTheStreet()
+{
+    repeat(9) {
+        if (rightIsClear()) {
+            repairOneHole();
+            moveForward();
+        }
+        else {
+            moveForward();
+        }
+    }
+    if (rightIsClear()) {
+        repairOneHole();
+    }
+}
+void repairOneHole()
+{
+    goRight();
+    dropBeeper();
+    turnAround();
+    moveForward();
+    turnRight();
+}

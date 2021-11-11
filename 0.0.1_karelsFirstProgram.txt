@@ -1,0 +1,12 @@
+// Required: goLeft, goRight
+
+void karelsFirstProgram()
+{
+    moveForward();
+    pickBeeper();
+    moveForward();
+    goLeft();
+    goRight();
+    dropBeeper();
+    moveForward();
+}

@@ -1,0 +1,10 @@
+// Required: goLeft, goRight
+
+void climbTheStairs()
+{
+    moveForward();
+    repeat(6) {
+        goLeft();
+        goRight();
+    }
+}

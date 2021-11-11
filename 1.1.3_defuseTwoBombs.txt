@@ -1,0 +1,8 @@
+// Required: defuseOneBomb
+
+void defuseTwoBombs()
+{
+    defuseOneBomb();
+    turnLeft();
+    defuseOneBomb();
+}

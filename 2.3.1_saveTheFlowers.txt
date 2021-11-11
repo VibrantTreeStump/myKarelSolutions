@@ -1,0 +1,48 @@
+// Required: goRight, goToEnd
+
+void saveTheFlowers()
+{
+    turnLeft();
+    goUpStairs();
+    goRight();
+    dropBeeper();
+    goDownStairs();
+}
+
+void goUpStairs()
+{
+    while (frontIsClear()){
+        if (rightIsClear()) {
+            goRight();
+            if (onBeeper()) {
+                pickBeeper();
+                turnLeft();
+            }
+        } else if (leftIsClear() && !frontIsClear()) {
+            turnLeft();
+        } else {
+            moveForward();
+        }
+    }
+}
+
+void goDownStairs()
+{
+    while (frontIsClear() || rightIsClear()) {
+        if (rightIsClear()) {
+            goRight();
+            while (frontIsClear()) {
+                goToEnd();
+            }
+            turnLeft();
+            if (!onBeeper() && !rightIsClear() && frontIsClear()) {
+                dropBeeper();
+            }
+        }
+        else if (leftIsClear() && !frontIsClear()) {
+            turnLeft();
+        } else {
+            moveForward();
+        }
+    }
+}

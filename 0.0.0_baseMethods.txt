@@ -1,0 +1,18 @@
+void goLeft()
+{
+    turnLeft();
+    moveForward();
+}
+
+void goRight()
+{
+    turnRight();
+    moveForward();
+}
+
+void goToEnd()
+{
+    while (frontIsClear()) {
+        moveForward();
+    }
+}

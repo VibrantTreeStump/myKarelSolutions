@@ -1,0 +1,35 @@
+// Required: goLeft, goRight
+
+void mowTheLawn()
+{
+    repeat(2) {
+        mowOneLine();
+        nextLineFromRight();
+        mowOneLine();
+        nextLineFromLeft();
+    }
+    mowOneLine();
+    nextLineFromRight();
+    mowOneLine();
+}
+
+void mowOneLine()
+{
+    repeat(6) {
+        moveForward();
+        pickBeeper();
+    }
+    moveForward();
+}
+
+void nextLineFromRight()
+{
+    goLeft();
+    turnLeft();
+}
+
+void nextLineFromLeft()
+{
+    goRight();
+    turnRight();
+}
