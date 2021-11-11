@@ -1,14 +1,15 @@
+// Required: goLeft
+
 void tileTheFloor()
 {
-    dropBeeper();
-    repeat(118) {
-        if (frontIsClear() && !beeperAhead()) {
-            moveForward();
+    repeat(100) {
+        if (!onBeeper() && !beeperAhead() && frontIsClear()) {
             dropBeeper();
+            moveForward();
         }
-        else {
-            turnLeft();
+        else if (!onBeeper()) {
+            dropBeeper();
+            goLeft();
         }
     }
-    moveForward();
 }

@@ -1,0 +1,15 @@
+// Required: goLeft
+
+void removeTheTiles()
+{
+    repeat(100) {
+        if (onBeeper() && beeperAhead()) {
+            pickBeeper();
+            moveForward();
+        }
+        else if (onBeeper()) {
+            pickBeeper();
+            goLeft();
+        }
+    }
+}

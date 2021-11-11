@@ -1,0 +1,17 @@
+// Required: goLeft, goRight
+
+void stealOlympicFire()
+{
+    moveForward();
+    repeat(6) {
+        goLeft();
+        goRight();
+    }
+    pickBeeper();
+    moveForward();
+    turnRight();
+    repeat(6) {
+        moveForward();
+    }
+    goLeft();
+}
