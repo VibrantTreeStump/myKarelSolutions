@@ -1,0 +1,83 @@
+void addFast()
+{
+    repeat(8) {
+        if (onBeeper() && beeperAhead()) {  // beeper in line 1 & 2
+            twoStepsForward();
+            if (!onBeeper()) {  // beeper in line 1 & 2, no beeper in line 3
+                caseOne();
+            }
+            else {  // beeper in line 1 & 2, beeper in line 3
+                moveForward();
+                turnRight();
+                dropBeeper();
+                moveForward();
+                turnRight();
+                moveForward();
+                dropBeeper();
+                repeat(2) {
+                    moveForward();
+                }
+                turnAround();
+            }
+        }
+        else if (!onBeeper() && !beeperAhead()) {  // no beeper in line 1 & 2
+            twoStepsForward();
+            if (!onBeeper()) {  // no beeper in line 1 & 2, no beeper in line 3
+                repeat(2) {
+                    moveForward();
+                    turnRight();
+                }
+                repeat(3) {
+                    moveForward();
+                }
+                turnAround();
+            }
+            else {  // no beeper in line 1 & 2, beeper in line 3
+                caseTwo();
+            }
+        }
+        else {  // only one beeper between lines 1 & 2
+            twoStepsForward();
+            if (!onBeeper()) {  // only one beeper between lines 1 & 2, no beeper in line 3
+                caseTwo();
+            }
+            else {  // only one beeper between lines 1 & 2, beeper in line 3
+                caseOne();
+            }
+        }
+    }
+}
+
+void twoStepsForward()
+{
+    repeat(2) {
+        moveForward();
+    }
+}
+
+void caseOne()
+{
+    repeat(2) {
+        moveForward();
+        turnRight();
+    }
+    moveForward();
+    dropBeeper();
+    repeat(2) {
+        moveForward();
+    }
+    turnAround();
+}
+
+void caseTwo()
+{
+    moveForward();
+    turnRight();
+    dropBeeper();
+    moveForward();
+    turnRight();
+    repeat(3) {
+        moveForward();
+    }
+    turnAround();
+}

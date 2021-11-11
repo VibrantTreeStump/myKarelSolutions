@@ -18,9 +18,11 @@ void goUpStairs()
                 pickBeeper();
                 turnLeft();
             }
-        } else if (leftIsClear() && !frontIsClear()) {
+        }
+		else if (leftIsClear() && !frontIsClear()) {
             turnLeft();
-        } else {
+        }
+		else {
             moveForward();
         }
     }
@@ -41,7 +43,8 @@ void goDownStairs()
         }
         else if (leftIsClear() && !frontIsClear()) {
             turnLeft();
-        } else {
+        }
+		else {
             moveForward();
         }
     }

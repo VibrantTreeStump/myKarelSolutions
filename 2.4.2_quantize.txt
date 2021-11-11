@@ -1,0 +1,42 @@
+// Required: goToEnd
+
+void quantize()
+{
+    while (onBeeper()) {
+        convertOneLine();
+        if (frontIsClear()) {
+            moveForward();
+        }
+    }
+}
+
+void convertOneLine()
+{
+    turnLeft();
+    repeat(5) {
+        moveForward();
+    }
+    if (onBeeper()) {
+        while (frontIsClear()) {
+            if (!onBeeper()) {
+                dropBeeper();
+            }
+            moveForward();
+        }
+        dropBeeper();
+        turnAround();
+        goToEnd();
+        turnLeft();
+    }
+    else {
+        turnAround();
+        while (frontIsClear()) {
+            if (onBeeper()) {
+                pickBeeper();
+            }
+            moveForward();
+        }
+        pickBeeper();
+        turnLeft();
+    }
+}
